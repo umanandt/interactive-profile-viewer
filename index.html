@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Manrope:wght@200;400&family=Nunito:wght@200;300;500;600;700;800;900&family=Outfit:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lexend+Deca:wght@100;200;300;400;500;600;700;900&family=Manrope:wght@200;400&family=Nunito:wght@200;300;500;600;700;800;900&family=Outfit:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lexend+Deca:wght@100;200;300;400;500;600;700;900&family=Manrope:wght@200;400&family=Nunito:wght@200;300;500;600;700;800;900&family=Outfit:wght@300;400&family=Roboto:ital,wght@0,100;0,400;0,500;1,100&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/181488b1bc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+      
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        background-color: hsl(233, 47%, 7%);
+      }
+
+
+      .main-container { 
+        height: 48%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       /* background-color: hsl(216, 50%, 16%); */
+        background: linear-gradient(hsl(216, 50%, 16%), hsl(215, 45%, 65%));
+        border-radius:10px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 5px 5px #ffffff;
+      }
+
+
+      
+
+      .widthTrans{
+        transition: width .5s ease-in-out;
+      }
+      .container-top {
+        position: absolute;
+        width: 80%;
+        height: 30%;
+        top: 10%;
+        left: 10%;
+      }
+
+      .qr-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+
+      .imgWidthTrans{
+        transition: widthImg .5s ease-in-out;
+      }
+
+      .widthImg{
+        width: 40%;
+        height: 78%;
+        object-fit: cover;
+      }
+
+      .divider{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 40%;
+        background-color: rgb(238, 229, 229);
+      }
+
+      .sub-container {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 42%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 8px;
+        color: #ffffff;
+        object-fit: cover;
+        overflow: hidden;
+      }
+      .profile, .inbox, .settings, .support, .Logout{
+        position: relative;
+        display: flex;
+        margin: 12px;
+      
+      }
+
+      .profile i, .inbox i, .settings i, .support i, .Logout i {
+        position: relative;
+        left : 10px;
+      }
+      .profile span, .inbox span, .settings span, .support span, .Logout span {
+        position: absolute;
+        left: 60px;
+      }
+
+      .profile:hover , .inbox:hover, .settings:hover, .support:hover, .Logout:hover {
+        background-color: hsl(216, 50%, 16%);
+        width: 100%;
+        height: 40%;
+        animation: effect 1s infinite;
+      }
+
+      @keyframes effect {
+        0%{
+               transform: scale(1);
+        }
+
+        50%{
+          transform: scale(1.1);
+        }
+        100%{
+          transform: scale(1);
+        }
+      }
+
+
+      .close{
+        position: absolute;
+        top: 2px;
+        left: 10px;   
+        cursor: pointer;    
+        color: #ffffff;
+      }
+      
+      .fontTrans{
+            width: 20px;
+            height: 25px;
+            transition: visibility 1s ease-in-out; 
+      }
+
+      .hide{
+        visibility: visible;
+      }
+               .hideTrans{
+                     transition: visibility .5s ease-in-out;
+                  }
+
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="close"></div>
+      
+      <div class="first-divider">
+
+      </div>
+      <div class="container-top">
+        <div class="image-container">
+          <img src="./images/umanand.jpg" alt="" class="qr-img widthImg imgWidthTrans" />
+        </div>
+      </div>
+
+      <div class="divider">
+
+      </div>
+
+      <div class="sub-container">
+        <div class="profile">
+          <div class="icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <span class="hide hideTrans">
+            Profile
+         </span>
+        </div>
+
+
+          <div class="inbox">
+            <div class="inbox-icon">
+              <i class="fa-solid fa-inbox"></i>
+            </div>
+            <span class="hide hideTrans">
+              inbox
+           </span>
+</div>
+            <div class="settings">
+              <div class="settings-icon">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <span class="hide hideTrans">
+                settings
+             </span>
+            </div>
+
+            <div class="support">
+              <div class="support-icon">
+                <i class="fa-solid fa-circle-question"></i>
+              </div>
+              <span class="hide hideTrans">
+                Support
+             </span>
+            </div>
+
+            <div class="Logout">
+              <div class="logout-icon">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </div>
+              <span class="hide hideTrans">
+                Logout
+             </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
